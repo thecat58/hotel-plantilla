@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hotel charambum</title>
+    <!-- Enlace a las hojas de estilo de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Hotel charambum</a>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#">Sobre Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Mision</a></li>
+            <li class="nav-item"><a class="nav-link" href="abitaciones.html">Habitaciones</a></li>
+            <li class="nav-item"><a class="nav-link" href="detalles.html">Detalles de informacion</a></li>
+            <li class="nav-item"><a class="nav-link" href="cuentas.html">cuentas</a></li>
+
+        </ul>
+    </nav>
+    <!-- kike -->
+
+    <div id="carouselVideoExample" class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ride="carousel">
+
+        <div class="carousel-inner ">
+            <div class="carousel-item active">
+                <video class="img-fluid" autoplay loop muted>
+                    <source src="https://mdbcdn.b-cdn.net/img/video/Tropical.mp4" type="video/mp4" />
+                </video>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Hotel charambum</h5>
+                    <p>
+                        Bienvenido al hotel
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   <!-- Contenido de la página -->
+<div class="container mt-3">
+    <h2>Reservar Habitación</h2>
+    <form>
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="fecha">Fecha de Reserva:</label>
+            <input type="date" class="form-control" id="fecha" required>
+        </div>
+        <div class="form-group">
+            <label for="tipoCliente">Tipo de Cliente:</label>
+            <select class="form-control" id="tipoCliente" required>
+                <option value="individual">Individual</option>
+                <option value="empresa">Empresa</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="fumar">Desea Habitacion para fumar</label>
+            <select class="form-control" id="fumar" required>
+                <option value="individual">Seleciona La una opcòn</option>
+                <option value="individual">SI</option>
+                <option value="empresa">No</option>
+            </select>
+        </div>
+        <!-- Mostrar el campo de tarjeta de crédito solo para clientes individuales -->
+        <div class="form-group" id="campoTarjeta" style="display: none;">
+            <label for="tarjeta">Número de Tarjeta de Crédito:</label>
+            <input type="text" class="form-control" id="tarjeta">
+        </div>
+        <!-- Nuevo campo para indicar la solicitud en el mostrador -->
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="solicitudMostrador">
+            <label class="form-check-label" for="solicitudMostrador">Solicitud en el mostrador</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Reservar</button>
+    </form>
+</div>
+
+<div class="container mt-3">
+    <h2>Detalles de la Reserva</h2>
+    <p><strong>Nombre:</strong> Chavito </p>
+    <p><strong>Fecha de Reserva:</strong> 2023-11-09</p>
+    <p><strong>Tipo de Cliente:</strong> Empresa</p>
+
+    <!-- Botón para procesar la llegada del cliente -->
+    <button type="button" class="btn btn-success" id="procesarLlegada">Procesar Llegada</button>
+</div><br>
+
+<script>
+    // Función para mostrar campo de tarjeta según el tipo de cliente seleccionado
+    document.getElementById('tipoCliente').addEventListener('change', function() {
+        var campoTarjeta = document.getElementById('campoTarjeta');
+        campoTarjeta.style.display = (this.value === 'individual') ? 'block' : 'none';
+    });
+</script>
+
+    <footer class="text-center text-white" style="background-color: #caced1;">
+        <div class="container p-4">
+            <section class="">
+                <div class="row">
+                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/113.webp" class="w-100" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/111.webp" class="w-100" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/112.webp" class="w-100" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/114.webp" class="w-100" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/115.webp" class="w-100" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/116.webp" class="w-100" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+       <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Chavito Kike:
+            <a class="text-white" href="https://mdbootstrap.com/">Bootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <script>
+        // Función para simular el procesamiento de la llegada del cliente
+        document.getElementById('procesarLlegada').addEventListener('click', function () {
+            alert('Llegada procesada con éxito. ¡Bienvenido!');
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
