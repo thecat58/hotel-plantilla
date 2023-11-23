@@ -11,10 +11,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     <style>
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
         /* Estilos personalizados para la barra de navegación */
         .navbar-custom {
             background-color: rgba(51, 120, 153, 0.515);
             /* Fondo oscuro */
+        }
+
+        .factura-logo {
+            width: 60px;
+            /* Ajusta el tamaño del logo según sea necesario */
+            margin-bottom: 10px;
         }
 
         .navbar-custom .navbar-brand,
@@ -70,7 +83,6 @@
 <body>
 
     <!-- Barra de Navegación -->
-
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <a class="navbar-brand" href="index.html">
             <img src="./recurso.png" class="navbar-logo" alt="Logo del Hotel">
@@ -83,8 +95,6 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link" href="./abitaciones.html">Habitaciones</a></li>
-                <li class="nav-item"><a class="nav-link" href="./detalles.html">Detalles de Información</a></li>
-                <li class="nav-item"><a class="nav-link" href="./cuentas.html">Cuentas</a></li>
                 <li class="nav-item"><a class="nav-link" href="./TiposUsuario.html">Usuarios</a></li>
 
             </ul>
@@ -94,58 +104,245 @@
             <button class="btn btn-outline-primary" type="submit">Buscar</button>
         </form>
     </nav>
+    <div id="carouselVideoExample" class="bg-image hover-overlay ripple shadow-1-strong rounded"
+        data-mdb-ride="carousel">
 
-          <div class="container mt-4">
-            <!-- Contenido principal -->
-            <ul class="nav nav-tabs" id="myTabs">
-                <li class="nav-item">
-                    <a class="nav-link active" id="recepcion-tab" data-toggle="tab" href="#recepcion">Recepción</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="gerente-tab" data-toggle="tab" href="#gerente">Gerente</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="admin-tab" data-toggle="tab" href="#admin">Administrador</a>
-                </li>
-            </ul>
-        
-            <div class="tab-content mt-2">
-                <div class="tab-pane fade show active" id="recepcion">
-                    <!-- Contenido para empleados de recepción -->
-                    <h2>Gestión de Clientes</h2>
-                    <p>Bienvenido al panel de gestión para empleados de recepción.</p>
-                    <!-- Agrega aquí funcionalidades específicas para empleados de recepción -->
-                    <!-- Por ejemplo: tablas de reservas, formularios de check-in/check-out, etc. -->
-                    <button class="btn btn-primary">Acción en Recepción</button>
-                </div>
-        
-                <div class="tab-pane fade" id="gerente">
-                    <!-- Contenido para el gerente -->
-                    <h2>Gestión de Empresas</h2>
-                    <p>Bienvenido al panel de gestión para el gerente.</p>
-                    <!-- Agrega aquí funcionalidades específicas para el gerente -->
-                    <!-- Por ejemplo: análisis de estadísticas, informes, etc. -->
-                    <button class="btn btn-primary">Acción para el Gerente</button>
-                </div>
-        
-                <div class="tab-pane fade" id="admin">
-                    <!-- Contenido para el administrador -->
-                    <h2>Mantenimiento del Sistema</h2>
-                    <p>Bienvenido al panel de mantenimiento del sistema.</p>
-                    <!-- Agrega aquí funcionalidades específicas para el administrador -->
-                    <!-- Por ejemplo: configuraciones avanzadas, gestión de usuarios, etc. -->
-                    <button class="btn btn-primary">Acción de Administrador</button>
+        <div class="carousel-inner ">
+            <div class="carousel-item active">
+                <video class="img-fluid" autoplay loop muted>
+                    <source src="https://mdbcdn.b-cdn.net/img/video/Tropical.mp4" type="video/mp4" />
+                </video>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Hotel charambum</h5>
+                    <p>
+                        Bienvenido al hotel
+                    </p>
                 </div>
             </div>
         </div>
-        
-    <footer class="text-center">
+    </div>
+
+  
+
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="row text-center flex-row">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Panel empleado</h6>
+                        <p class="card-text">Has clic en tu panel indeicado.</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#panelEmpleado">
+                            Caracteriscas
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card bg-primary" style="width: 18rem;">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Panel Gerente</h6>
+                    <p class="card-text">Has clic en tu panel indeicado.</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#panelJerente">
+                        Caracteriscas
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-body-secondary">Panel Admin</h6>
+                <p class="card-text">Has clic en tu panel indeicado.</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#panelAdmin">
+                    Caracteriscas
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="panelAdmin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">panel</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="invoice-container">
+                            <div class="invoice-body">
+                                <div class="container mt-5">
+                                    <img class="factura-logo" src="./Soy_Admin.webp" class="card-img-top" alt="Avatar">
+                                    <div class="container mt-5">
+                                        <h2>Panel de Permisos</h2>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <form>
+                                                    <div class="mb-3">
+                                                        <label for="usuario" class="form-label">Usuario</label>
+                                                        <input type="text" class="form-control" id="usuario"
+                                                            placeholder="Nombre de usuario">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="permisos" class="form-label">Permisos</label>
+                                                        <select class="form-select" id="permisos">
+                                                            <option selected>Selecciona los permisos</option>
+                                                            <option value="lectura">Lectura</option>
+                                                            <option value="escritura">Escritura</option>
+                                                            <option value="eliminacion">Eliminación</option>
+                                                        </select>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">Guardar
+                                                        Permisos</button>
+                                                </form>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <!-- Aquí puedes mostrar la lista de usuarios y sus permisos -->
+                                                <h3>Lista de Usuarios y Permisos</h3>
+                                                <ul class="list-group">
+                                                    <!-- Aquí puedes agregar elementos de lista con información de usuarios y permisos -->
+                                                    <li class="list-group-item">Usuario1 - Lectura</li>
+                                                    <li class="list-group-item">Usuario2 - Escritura</li>
+                                                    <li class="list-group-item">Usuario3 - Eliminación</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal fade" id="panelJerente" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">panel</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="invoice-container">
+                            <div class="invoice-body">
+                                <div class="container mt-5">
+                                    <img class="factura-logo" src="./usuario.png" class="card-img-top" alt="Avatar">
+                                    <div class="container mt-5">
+                                        <h2>Panel de Permisos</h2>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Permiso</th>
+                                                    <th scope="col">Descripción</th>
+                                                    <th scope="col">Acción</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Ver Reservas</td>
+                                                    <td>Permite ver las reservas existentes.</td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-success">Conceder</button>
+                                                        <button type="button" class="btn btn-danger">Revocar</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="panelEmpleado" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">panel</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="invoice-container">
+                            <div class="invoice-body">
+                                <div class="container mt-5">
+                                    <img class="factura-logo" src="./usuario.png" class="card-img-top" alt="Avatar">
+
+                                    <div class="container mt-4">
+                                        <h1 class="mb-4">Formulario de Reserva - Hotel Charambu</h1>
+
+                                        <form>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="nombre">Nombre</label>
+                                                    <input type="text" class="form-control" id="nombre"
+                                                        placeholder="Nombre completo" required>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="email">Correo Electrónico</label>
+                                                    <input type="email" class="form-control" id="email"
+                                                        placeholder="Correo electrónico" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="checkin">Fecha de Check-in</label>
+                                                    <input type="date" class="form-control" id="checkin" required>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="checkout">Fecha de Check-out</label>
+                                                    <input type="date" class="form-control" id="checkout" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="habitacion">Tipo de Habitación</label>
+                                                <select class="form-control" id="habitacion" required>
+                                                    <option value="" disabled selected>Seleccione el tipo de habitación
+                                                    </option>
+                                                    <option value="individual">Individual</option>
+                                                    <option value="doble">Doble</option>
+                                                    <option value="suite">Suite</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="comentarios">Comentarios Adicionales</label>
+                                                <textarea class="form-control" id="comentarios" rows="4"></textarea>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-primary">Enviar Reserva</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center mt-5">
         <img src="./recurso.png" alt="Logo del Hotel" class="footer-logo">
         <p>¡Disfruta de tu estancia en nuestro hotel tropical!</p>
         <p>© 2023 Chavito Kike:</p>
         <!-- Enlaces a redes sociales -->
         <ul class="social-icons">
-            <li><a href="https://web.facebook.com/?_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://web.facebook.com/?_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook"></i></a>
+            </li>
             <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
         </ul>
@@ -153,7 +350,12 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script src="scripts.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>
