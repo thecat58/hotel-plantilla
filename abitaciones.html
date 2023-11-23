@@ -1,27 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Gestión de Reservas - Hotel Charambum</title>
+    <title>Hotel Charambum</title>
     <!-- Enlace a las hojas de estilo de Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">Hotel Charambum</a>
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="#"></a></li>
-            <li class="nav-item"><a class="nav-link" href="#"></a></li>
-            <li class="nav-item"><a class="nav-link" href="abitaciones.html">Habitaciones</a></li>
-            <li class="nav-item"><a class="nav-link" href="detalles.html">Detalles de informacion</a></li>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-        </ul>
+    <style>
+        /* Estilos personalizados para la barra de navegación */
+        .navbar-custom {
+            background-color: rgba(51, 120, 153, 0.515);
+            /* Fondo oscuro */
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.515)
+                /* Texto blanco */
+        }
+
+        .navbar-custom .navbar-toggler-icon {
+            background-color: #556d6a;
+            /* Icono del botón desplegable blanco */
+        }
+
+        .navbar-custom .navbar-brand img {
+            max-height: 40px;
+            /* Ajusta la altura máxima de la imagen según tu preferencia */
+        }
+
+        footer {
+            background-color: rgba(51, 120, 153, 0.515);
+            /* Color de fondo principal */
+            color: #ffffff;
+            /* Texto en color blanco */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            width: 60px;
+            /* Ajusta el tamaño del logo según sea necesario */
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            list-style: none;
+            padding: 0;
+        }
+
+        .social-icons li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            /* Iconos en color blanco */
+            font-size: 24px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Barra de Navegación -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <a class="navbar-brand" href="index.html">
+            <img src="./recurso.png" class="navbar-logo" alt="Logo del Hotel">
+            Hotel Charambum
+        </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="./abitaciones.html">Habitaciones</a></li>
+                <li class="nav-item"><a class="nav-link" href="./detalles.html">Detalles de Información</a></li>
+                <li class="nav-item"><a class="nav-link" href="./cuentas.html">Cuentas</a></li>
+                <li class="nav-item"><a class="nav-link" href="./TiposUsuario.html">Usuarios</a></li>
+
+            </ul>
+        </div>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="buscar" aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit">Buscar</button>
+        </form>
     </nav>
 
     <!-- Contenido de la página -->
-    <div class="container mt-3">
+    <!-- <div class="container mt-3">
         <h2>Reserva de Habitaciones</h2>
 
         <form>
@@ -46,73 +121,122 @@
 
             <button type="submit" id="procesarLlegada" class="btn btn-primary">Reservar</button>
         </form><br>
-    </div>
-    <footer class="card-footer" style="background-color: #caced1;">
-        <div class="container p-4">
-            <section class="">
-                <div class="row">
-                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                            data-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/113.webp" class="w-100" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                            data-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/111.webp" class="w-100" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                            data-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/112.webp" class="w-100" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                            data-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/114.webp" class="w-100" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                            data-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/115.webp" class="w-100" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                            data-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/116.webp" class="w-100" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
+    </div> -->
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
 
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2023 Chavito Kike:
-            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <footer class="text-center">
+        <img src="./recurso.png" alt="Logo del Hotel" class="footer-logo">
+        <p>¡Disfruta de tu estancia en nuestro hotel tropical!</p>
+        <p>© 2023 Chavito Kike:</p>
+        <!-- Enlaces a redes sociales -->
+        <ul class="social-icons">
+            <li><a href="https://web.facebook.com/?_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        </ul>
     </footer>
     <script>
         // Función para simular el procesamiento de la llegada del cliente
@@ -120,9 +244,10 @@
             alert('Reserva procesada con éxito. ¡Bienvenido!');
         });
     </script>
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

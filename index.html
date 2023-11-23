@@ -7,23 +7,96 @@
     <title>Hotel Charambum</title>
     <!-- Enlace a las hojas de estilo de Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <style>
+        /* Estilos personalizados para la barra de navegación */
+        .navbar-custom {
+            background-color: rgba(51, 120, 153, 0.515);
+            /* Fondo oscuro */
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.515)
+                /* Texto blanco */
+        }
+
+        .navbar-custom .navbar-toggler-icon {
+            background-color: #556d6a;
+            /* Icono del botón desplegable blanco */
+        }
+
+        .navbar-custom .navbar-brand img {
+            max-height: 40px;
+            /* Ajusta la altura máxima de la imagen según tu preferencia */
+        }
+
+        footer {
+            background-color: rgba(51, 120, 153, 0.515);
+            /* Color de fondo principal */
+            color: #ffffff;
+            /* Texto en color blanco */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            width: 60px;
+            /* Ajusta el tamaño del logo según sea necesario */
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            list-style: none;
+            padding: 0;
+        }
+
+        .social-icons li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            /* Iconos en color blanco */
+            font-size: 24px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">Hotel charambum</a>
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="#"></a></li>
-            <li class="nav-item"><a class="nav-link" href="abitaciones.html">Habitaciones</a></li>
-            <li class="nav-item"><a class="nav-link" href="detalles.html">Detalles de informacion</a></li>
-            <li class="nav-item"><a class="nav-link" href="cuentas.html">cuentas</a></li>
-            <li class="nav-item"><a class="nav-link" href="TiposUsuario.html">Usuarios</a></li>
 
-        </ul>
+    <!-- Barra de Navegación -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <a class="navbar-brand" href="index.html">
+            <img src="./recurso.png" class="navbar-logo" alt="Logo del Hotel">
+            Hotel Charambum
+        </a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="./abitaciones.html">Habitaciones</a></li>
+                <li class="nav-item"><a class="nav-link" href="./detalles.html">Detalles de Información</a></li>
+                <li class="nav-item"><a class="nav-link" href="./cuentas.html">Cuentas</a></li>
+                <li class="nav-item"><a class="nav-link" href="./TiposUsuario.html">Usuarios</a></li>
+
+            </ul>
+        </div>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="buscar" aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit">Buscar</button>
+        </form>
     </nav>
 
-    <div id="carouselVideoExample" class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ride="carousel">
+    <div id="carouselVideoExample" class="bg-image hover-overlay ripple shadow-1-strong rounded"
+        data-mdb-ride="carousel">
 
         <div class="carousel-inner ">
             <div class="carousel-item active">
@@ -41,126 +114,124 @@
     </div>
 
 
-   <!-- Contenido de la página -->
-<div class="container mt-3">
-    <h2>Reservar Habitación</h2>
-    <form>
-        <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input type="text" class="form-control" id="nombre" required>
-        </div>
-        <div class="form-group">
-            <label for="fecha">Fecha de Reserva:</label>
-            <input type="date" class="form-control" id="fecha" required>
-        </div>
-        <div class="form-group">
-            <label for="tipoCliente">Tipo de Cliente:</label>
-            <select class="form-control" id="tipoCliente" required>
-                <option value="individual">Individual</option>
-                <option value="empresa">Empresa</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="fumar">Desea Habitacion para fumar</label>
-            <select class="form-control" id="fumar" required>
-                <option value="individual">Seleciona La una opcòn</option>
-                <option value="individual">SI</option>
-                <option value="empresa">No</option>
-            </select>
-        </div>
-        <!-- Mostrar el campo de tarjeta de crédito solo para clientes individuales -->
-        <div class="form-group" id="campoTarjeta" style="display: none;">
-            <label for="tarjeta">Número de Tarjeta de Crédito:</label>
-            <input type="text" class="form-control" id="tarjeta">
-        </div>
-        <!-- Nuevo campo para indicar la solicitud en el mostrador -->
-        <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="solicitudMostrador">
-            <label class="form-check-label" for="solicitudMostrador">Solicitud en el mostrador</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Reservar</button>
-    </form>
-</div>
+    <!-- Contenido de la página -->
+    <div class="container mt-3">
+        <h2>Reservar Habitación</h2>
+        <form>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha de Reserva:</label>
+                <input type="date" class="form-control" id="fecha" required>
+            </div>
+            <div class="form-group">
+                <label for="tipoCliente">Tipo de Cliente:</label>
+                <select class="form-control" id="tipoCliente" required>
+                    <option value="individual">Individual</option>
+                    <option value="empresa">Empresa</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fumar">Desea Habitacion para fumar</label>
+                <select class="form-control" id="fumar" required>
+                    <option value="individual">Seleciona La una opcòn</option>
+                    <option value="individual">SI</option>
+                    <option value="empresa">No</option>
+                </select>
+            </div>
+            <!-- Mostrar el campo de tarjeta de crédito solo para clientes individuales -->
+            <div class="form-group" id="campoTarjeta" style="display: none;">
+                <label for="tarjeta">Número de Tarjeta de Crédito:</label>
+                <input type="text" class="form-control" id="tarjeta">
+            </div>
+            <!-- Nuevo campo para indicar la solicitud en el mostrador -->
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="solicitudMostrador">
+                <label class="form-check-label" for="solicitudMostrador">Solicitud en el mostrador</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Reservar</button>
+        </form>
+    </div>
 
-<div class="container mt-3">
-    <h2>Detalles de la Reserva</h2>
-    <p><strong>Nombre:</strong> Chavito </p>
-    <p><strong>Fecha de Reserva:</strong> 2023-11-09</p>
-    <p><strong>Tipo de Cliente:</strong> Empresa</p>
+    <div class="container mt-3">
+        <h2>Detalles de la Reserva</h2>
+        <p><strong>Nombre:</strong> Chavito </p>
+        <p><strong>Fecha de Reserva:</strong> 2023-11-09</p>
+        <p><strong>Tipo de Cliente:</strong> Empresa</p>
 
-    <!-- Botón para procesar la llegada del cliente -->
-    <button type="button" class="btn btn-success" id="procesarLlegada">Procesar Llegada</button>
-</div><br>
+        <!-- Botón para procesar la llegada del cliente -->
+        <button type="button" class="btn btn-success" id="procesarLlegada">Procesar Llegada</button>
+    </div><br>
 
-<script>
-    // Función para mostrar campo de tarjeta según el tipo de cliente seleccionado
-    document.getElementById('tipoCliente').addEventListener('change', function() {
-        var campoTarjeta = document.getElementById('campoTarjeta');
-        campoTarjeta.style.display = (this.value === 'individual') ? 'block' : 'none';
-    });
-</script>
+    <script>
+        // Función para mostrar campo de tarjeta según el tipo de cliente seleccionado
+        document.getElementById('tipoCliente').addEventListener('change', function () {
+            var campoTarjeta = document.getElementById('campoTarjeta');
+            campoTarjeta.style.display = (this.value === 'individual') ? 'block' : 'none';
+        });
+    </script>
 
-    <footer class="text-center text-white" style="background-color: #caced1;">
-        <div class="container p-4">
-            <section class="">
-                <div class="row">
-                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/113.webp" class="w-100" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/111.webp" class="w-100" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/112.webp" class="w-100" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/114.webp" class="w-100" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/115.webp" class="w-100" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/116.webp" class="w-100" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                            </a>
-                        </div>
-                    </div>
+    <div class="container mt-3">
+        <button type="button" class="btn btn-primary m-lg-5" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Factura
+        </button>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Factura</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </section>
+                <div class="modal-body">
+                    Factura No: 001 <br>
+                    Fecha: 22 de noviembre de 2023 <br>
+
+                    Vendedor:<br>
+                    Nombre de la Empresa<br>
+                    Dirección de la Empresa<br>
+                    Teléfono: (123) 456-7890v<br>
+                    Correo Electrónico: info@empresa.com<br>
+
+                    Cliente:<br>
+                    Nombre del Cliente<br>
+                    Dirección del Cliente<br>
+                    Teléfono: (987) 654-3210<br>
+                    Correo Electrónico: cliente@email.com<br>
+
+                    Descripción de los Productos/Servicios:
+
+
+                    Subtotal: $180.00<br>
+                    Impuesto (IVA 10%): $18.00<br>
+                    Total: $198.00<br>
+
+                    Condiciones de Pago: 30 días netos.<br>
+
+                    Gracias por su compra. Para cualquier consulta, comuníquese con nuestro servicio al cliente.<br>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">descargar</button>
+                </div>
+            </div>
         </div>
-       <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2023 Chavito Kike:
-            <a class="text-white" href="https://mdbootstrap.com/">Bootstrap.com</a>
-        </div>
-        <!-- Copyright -->
+    </div>
+
+    <footer class="text-center">
+        <img src="./recurso.png" alt="Logo del Hotel" class="footer-logo">
+        <p>¡Disfruta de tu estancia en nuestro hotel tropical!</p>
+        <p>© 2023 Chavito Kike:</p>
+        <!-- Enlaces a redes sociales -->
+        <ul class="social-icons">
+            <li><a href="https://web.facebook.com/?_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        </ul>
     </footer>
     <script>
         // Función para simular el procesamiento de la llegada del cliente
@@ -171,7 +242,9 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
