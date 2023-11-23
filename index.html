@@ -134,9 +134,11 @@
             </ul>
         </div>
         <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="buscar" aria-label="Search">
+            <input class="form-control me-2 mr-2" type="search" placeholder="Buscar" aria-label="Search">
             <button class="btn btn-outline-primary" type="submit">Buscar</button>
         </form>
+
+
     </nav>
 
     <div id="carouselVideoExample" class="bg-image hover-overlay ripple shadow-1-strong rounded"
@@ -158,55 +160,100 @@
     </div>
 
 
-    <!-- Contenido de la página -->
-    <div class="container mt-3">
-        <h2>Reservar Habitación</h2>
-        <form>
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" required>
-            </div>
-            <div class="form-group">
-                <label for="fecha">Fecha de Reserva:</label>
-                <input type="date" class="form-control" id="fecha" required>
-            </div>
-            <div class="form-group">
-                <label for="tipoCliente">Tipo de Cliente:</label>
-                <select class="form-control" id="tipoCliente" required>
-                    <option value="individual">Individual</option>
-                    <option value="empresa">Empresa</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="fumar">Desea Habitacion para fumar</label>
-                <select class="form-control" id="fumar" required>
-                    <option value="individual">Seleciona La una opcòn</option>
-                    <option value="individual">SI</option>
-                    <option value="empresa">No</option>
-                </select>
-            </div>
-            <!-- Mostrar el campo de tarjeta de crédito solo para clientes individuales -->
-            <div class="form-group" id="campoTarjeta" style="display: none;">
-                <label for="tarjeta">Número de Tarjeta de Crédito:</label>
-                <input type="text" class="form-control" id="tarjeta">
-            </div>
-            <!-- Nuevo campo para indicar la solicitud en el mostrador -->
-            <div class="form-group" id="campoTarjeta">
-                <p>Ponga su tarjeta de credito si no pertenece a una empres asicoada</p>
-                <label for="tarjeta">Número de Tarjeta de Crédito:</label>
-                <input type="number" class="form-control" id="tarjeta">
-            </div>
-            <a type="submit" class="btn btn-primary btn-block" href="./abitaciones.html">Ver las avitaciones</a>
+    <style>
+        /* Estilo para las imágenes con efectos */
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            margin-right: 80px;
+            margin-top: 30px;
+        }
 
-        </form>
+        .image-container img {
+            width: 160%;
+            /* Ajusta el valor según sea necesario para el ancho */
+            height: auto;
+            /* Ajusta el valor según sea necesario para la altura */
+            transition: transform 0.5s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.2);
+        }
+    </style>
+
+
+    </head>
+
+    <body>
+
+        <div class="container mt-3">
+            <div class="row">
+                <!-- Columna a la izquierda con imágenes y efectos -->
+                <div class="col-md-6">
+                    <div class="image-container mb-3">
+                        <img src="/img/hotel1.jpg" alt="Imagen 1">
+                    </div>
+                </div>
+
+                <!-- Columna a la derecha con el formulario de reserva -->
+                <div class="col-md-6"><br><br>
+                    <h2>Reservar Habitación</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha">Fecha de Reserva:</label>
+                            <input type="date" class="form-control" id="fecha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipoCliente">Tipo de Cliente:</label>
+                            <select class="form-control" id="tipoCliente" required>
+                                <option value="individual">Individual</option>
+                                <option value="empresa">Empresa</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="fumar">Desea Habitacion para fumar</label>
+                            <select class="form-control" id="fumar" required>
+                                <option value="individual">Seleciona una opción</option>
+                                <option value="individual">SI</option>
+                                <option value="empresa">No</option>
+                            </select>
+                        </div>
+                        <!-- Mostrar el campo de tarjeta de crédito solo para clientes individuales -->
+                        <div class="form-group" id="campoTarjeta">
+                            <label for="tarjeta">Número de Tarjeta de Crédito:</label>
+                            <input type="text" class="form-control" id="tarjeta">
+
+                            <a type="submit" class="btn btn-primary btn-block" href="./abitaciones.html">Ver habitaciones</a>
+
+                        </div>
+                        <!-- Nuevo campo para indicar la solicitud en el mostrador -->
+                        <div class="form-check d-flex align-items-center">
+                            <input type="checkbox" class="form-check-input" id="solicitudMostrador">
+                            <label class="form-check-label mr-3" for="solicitudMostrador">Quiere solicitar en el
+                                mostrador?</label>
+                            <button type="button" class="btn btn-primary m-lg-5" data-bs-toggle="modal"
+                                data-bs-target="#reserva">
+                                Hacer la reserva
+                            </button><br>
+                             <button type="button" class="btn btn-primary m-lg-5" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop">
+                                Ver factura
+                            </button>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
 
         <div class="container mt-3 d-flex justify-content-between">
-            <button type="button" class="btn btn-primary m-lg-5" data-bs-toggle="modal" data-bs-target="#reserva">
-                Hacer la reserva
-            </button> <button type="button" class="btn btn-primary m-lg-5" data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop">
-                Ver factura
-            </button>
+
         </div>
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -291,79 +338,81 @@
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 
-     <!-- Modal -->
-     <div class="modal fade" id="reserva" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-     <div class="modal-dialog">
-         <div class="modal-content">
-             <div class="modal-header">
-                 <h5 class="modal-title" id="staticBackdropLabel">Factura</h5>
-                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-             </div>
-             <div class="modal-body">
-                 <div class="container">
-                     <div class="invoice-container">
+        <!-- Modal -->
+        <div class="modal fade" id="reserva" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Factura</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="invoice-container">
 
-                       <div class="invoice-header ">
-                         <div class="d-flex justify-content-center align-items-center flex-column">
-                             <img src="./recurso.png" class="factura-logo mb-3" alt="">
-                             <h1 class="text-center">Detalles de la reserva</h1>
-                         </div>
-                       </div>
-                       <div class="invoice-body">
-                         <div class="row">
-                           <div class="col-md-6">
-                             <p><strong>De:</strong> Hotel charambum</p>
-                             <p>Se le hace la resrva a</p>
-                             <p>Julio Ernandez </p>
-                           </div>
-                           <div class="col-md-6 text-right">
-                             <p><strong>De:</strong> Una habitacio </p>
-                             <p><strong>Tipo:</strong> Para fumadores </p>
-                             <p><strong>Poveniente:</strong> De la empresa: SOFAIN  </p>
-                             <p>Reservada para el dia 12 noviembre del 2023</p>
-                           </div>
-                         </div>
-                       </div>
-                 
-                       <div class="invoice-footer">
-                         <p>Gracias por su reserva. Para cualquier consulta, comuníquese con nuestro servicio al cliente.</p>
-                       </div>
-                     </div>
-                   </div>
+                                <div class="invoice-header ">
+                                    <div class="d-flex justify-content-center align-items-center flex-column">
+                                        <img src="./recurso.png" class="factura-logo mb-3" alt="">
+                                        <h1 class="text-center">Detalles de la reserva</h1>
+                                    </div>
+                                </div>
+                                <div class="invoice-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p><strong>De:</strong> Hotel charambum</p>
+                                            <p>Se le hace la resrva a</p>
+                                            <p>Julio Ernandez </p>
+                                        </div>
+                                        <div class="col-md-6 text-right">
+                                            <p><strong>De:</strong> Una habitacio </p>
+                                            <p><strong>Tipo:</strong> Para fumadores </p>
+                                            <p><strong>Poveniente:</strong> De la empresa: SOFAIN </p>
+                                            <p>Reservada para el dia 12 noviembre del 2023</p>
+                                        </div>
+                                    </div>
+                                </div>
 
-             </div>
-             <div class="modal-footer">
-                 <button type="button" class="btn btn-primary">descargar</button>
-             </div>
-         </div>
-     </div>
- </div>
-    <footer class="text-center">
-        <img src="./recurso.png" alt="Logo del Hotel" class="footer-logo">
-        <p>¡Disfruta de tu estancia en nuestro hotel tropical!</p>
-        <p>© 2023 Chavito Kike:</p>
-        <!-- Enlaces a redes sociales -->
-        <ul class="social-icons">
-            <li><a href="https://web.facebook.com/?_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook"></i></a></li>
-            <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-        </ul>
-    </footer>
-    <script>
-        // Función para simular el procesamiento de la llegada del cliente
-        document.getElementById('procesarLlegada').addEventListener('click', function () {
-            alert('Llegada procesada con éxito. ¡Bienvenido!');
-        });
-    </script>
+                                <div class="invoice-footer">
+                                    <p>Gracias por su reserva. Para cualquier consulta, comuníquese con nuestro servicio
+                                        al cliente.</p>
+                                </div>
+                            </div>
+                        </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-</body>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">descargar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="text-center">
+            <img src="./recurso.png" alt="Logo del Hotel" class="footer-logo">
+            <p>¡Disfruta de tu estancia en nuestro hotel tropical!</p>
+            <p>© 2023 Chavito Kike:</p>
+            <!-- Enlaces a redes sociales -->
+            <ul class="social-icons">
+                <li><a href="https://web.facebook.com/?_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </footer>
+        <script>
+            // Función para simular el procesamiento de la llegada del cliente
+            document.getElementById('procesarLlegada').addEventListener('click', function () {
+                alert('Llegada procesada con éxito. ¡Bienvenido!');
+            });
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    </body>
 
 </html>
