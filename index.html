@@ -48,6 +48,12 @@
             margin-bottom: 10px;
         }
 
+        .factura-logo {
+            width: 60px;
+            /* Ajusta el tamaño del logo según sea necesario */
+            margin-bottom: 10px;
+        }
+
         .social-icons {
             list-style: none;
             padding: 0;
@@ -66,42 +72,42 @@
         }
 
 
-    .invoice-container {
-      margin: 50px auto;
-      max-width: 800px;
-      background-color: #fff;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+        .invoice-container {
+            margin: 50px auto;
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-    .invoice-header,
-    .invoice-footer {
-      background-color: #f8f9fa;
-      padding: 10px;
-      border-radius: 8px;
-    }
+        .invoice-header,
+        .invoice-footer {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+        }
 
-    .invoice-body {
-      padding: 20px;
-    }
+        .invoice-body {
+            padding: 20px;
+        }
 
-    .invoice-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
+        .invoice-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-    .invoice-table th,
-    .invoice-table td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
+        .invoice-table th,
+        .invoice-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
 
-    .total-row {
-      font-weight: bold;
-    }
+        .total-row {
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -185,116 +191,156 @@
                 <input type="text" class="form-control" id="tarjeta">
             </div>
             <!-- Nuevo campo para indicar la solicitud en el mostrador -->
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="solicitudMostrador">
-                <label class="form-check-label" for="solicitudMostrador">Solicitud en el mostrador</label>
+            <div class="form-group" id="campoTarjeta">
+                <p>Ponga su tarjeta de credito si no pertenece a una empres asicoada</p>
+                <label for="tarjeta">Número de Tarjeta de Crédito:</label>
+                <input type="number" class="form-control" id="tarjeta">
             </div>
-            <button type="submit" class="btn btn-primary">Reservar</button>
+            <a type="submit" class="btn btn-primary btn-block" href="./abitaciones.html">Ver las avitaciones</a>
+
         </form>
-    </div>
 
-    <div class="container mt-3">
-        <h2>Detalles de la Reserva</h2>
-        <p><strong>Nombre:</strong> Chavito </p>
-        <p><strong>Fecha de Reserva:</strong> 2023-11-09</p>
-        <p><strong>Tipo de Cliente:</strong> Empresa</p>
+        <div class="container mt-3 d-flex justify-content-between">
+            <button type="button" class="btn btn-primary m-lg-5" data-bs-toggle="modal" data-bs-target="#reserva">
+                Hacer la reserva
+            </button> <button type="button" class="btn btn-primary m-lg-5" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop">
+                Ver factura
+            </button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Factura</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="invoice-container">
 
-        <!-- Botón para procesar la llegada del cliente -->
-        <button type="button" class="btn btn-success" id="procesarLlegada">Procesar Llegada</button>
-    </div><br>
+                                <div class="invoice-header ">
+                                    <div class="d-flex justify-content-center align-items-center flex-column">
+                                        <img src="./enviado.png" class="factura-logo mb-3" alt="">
+                                        <h1 class="text-center">Factura</h1>
+                                    </div>
+                                    <p class="text-center">Logística y entrega</p>
+                                </div>
+                                <div class="invoice-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p><strong>De:</strong> Hotel charambum</p>
+                                            <p>Cr 40 #4-n15</p>
+                                            <p>Teléfono: +57 3125618743</p>
+                                        </div>
+                                        <div class="col-md-6 text-right">
+                                            <p><strong>Para:</strong> Jugador con tus sentimeintos </p>
+                                            <p>Cr 40 #4-n15</p>
+                                            <p>Fecha: 22 de noviembre de 2023</p>
+                                        </div>
+                                    </div>
 
-    <script>
-        // Función para mostrar campo de tarjeta según el tipo de cliente seleccionado
-        document.getElementById('tipoCliente').addEventListener('change', function () {
-            var campoTarjeta = document.getElementById('campoTarjeta');
-            campoTarjeta.style.display = (this.value === 'individual') ? 'block' : 'none';
-        });
-    </script>
+                                    <table class="table invoice-table mt-4">
+                                        <thead>
+                                            <tr>
+                                                <th>Descripción</th>
+                                                <th>Cantidad</th>
+                                                <th>Precio Unitario</th>
+                                                <th>Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Habitacio de Precidente Chavito</td>
+                                                <td>1</td>
+                                                <td>$500.000</td>
+                                                <td>$500.000</td>
+                                            </tr>
 
-    <div class="container mt-3">
-        <button type="button" class="btn btn-primary m-lg-5" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Factura
-        </button>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Factura</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="invoice-container">
-                          <div class="invoice-header">
-                            <h1 class="text-center">Factura</h1>
-                          </div>
-                    
-                          <div class="invoice-body">
-                            <div class="row">
-                              <div class="col-md-6">
-                                <p><strong>De:</strong> Hotel charambum</p>
-                                <p>Cr 40 #4-n15</p>
-                                <p>Teléfono: +57 3125618743</p>
-                              </div>
-                              <div class="col-md-6 text-right">
-                                <p><strong>Para:</strong> Jugador con tus sentimeintos </p>
-                                <p>Cr 40 #4-n15</p>
-                                <p>Fecha: 22 de noviembre de 2023</p>
-                              </div>
+                                        <tfoot>
+                                            <tr class="total-row">
+                                                <td colspan="3" class="text-right">Subtotal:</td>
+                                                <td>$580.00</td>
+                                            </tr>
+                                            <tr class="total-row">
+                                                <td colspan="3" class="text-right">Impuesto (IVA 10%):</td>
+                                                <td>$18.00</td>
+                                            </tr>
+                                            <tr class="total-row">
+                                                <td colspan="3" class="text-right">Total:</td>
+                                                <td>$198.00</td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+
+                                <div class="invoice-footer">
+                                    <p>Condiciones de Pago: 30 días netos</p>
+                                    <p>Gracias por su compra. Para cualquier consulta, comuníquese con nuestro servicio
+                                        al cliente.</p>
+                                </div>
                             </div>
-                    
-                            <table class="table invoice-table mt-4">
-                              <thead>
-                                <tr>
-                                  <th>Descripción</th>
-                                  <th>Cantidad</th>
-                                  <th>Precio Unitario</th>
-                                  <th>Total</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>Habitacio de Precidente Chavito</td>
-                                  <td>1</td>
-                                  <td>$500.000</td>
-                                  <td>$500.000</td>
-                                </tr>
-
-                              <tfoot>
-                                <tr class="total-row">
-                                  <td colspan="3" class="text-right">Subtotal:</td>
-                                  <td>$580.00</td>
-                                </tr>
-                                <tr class="total-row">
-                                  <td colspan="3" class="text-right">Impuesto (IVA 10%):</td>
-                                  <td>$18.00</td>
-                                </tr>
-                                <tr class="total-row">
-                                  <td colspan="3" class="text-right">Total:</td>
-                                  <td>$198.00</td>
-                                </tr>
-                              </tfoot>
-                            </table>
-                          </div>
-                    
-                          <div class="invoice-footer">
-                            <p>Condiciones de Pago: 30 días netos</p>
-                            <p>Gracias por su compra. Para cualquier consulta, comuníquese con nuestro servicio al cliente.</p>
-                          </div>
                         </div>
-                      </div>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">descargar</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">descargar</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+     <!-- Modal -->
+     <div class="modal fade" id="reserva" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+     <div class="modal-dialog">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h5 class="modal-title" id="staticBackdropLabel">Factura</h5>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div class="modal-body">
+                 <div class="container">
+                     <div class="invoice-container">
+
+                       <div class="invoice-header ">
+                         <div class="d-flex justify-content-center align-items-center flex-column">
+                             <img src="./recurso.png" class="factura-logo mb-3" alt="">
+                             <h1 class="text-center">Detalles de la reserva</h1>
+                         </div>
+                       </div>
+                       <div class="invoice-body">
+                         <div class="row">
+                           <div class="col-md-6">
+                             <p><strong>De:</strong> Hotel charambum</p>
+                             <p>Se le hace la resrva a</p>
+                             <p>Julio Ernandez </p>
+                           </div>
+                           <div class="col-md-6 text-right">
+                             <p><strong>De:</strong> Una habitacio </p>
+                             <p><strong>Tipo:</strong> Para fumadores </p>
+                             <p><strong>Poveniente:</strong> De la empresa: SOFAIN  </p>
+                             <p>Reservada para el dia 12 noviembre del 2023</p>
+                           </div>
+                         </div>
+                       </div>
+                 
+                       <div class="invoice-footer">
+                         <p>Gracias por su reserva. Para cualquier consulta, comuníquese con nuestro servicio al cliente.</p>
+                       </div>
+                     </div>
+                   </div>
+
+             </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-primary">descargar</button>
+             </div>
+         </div>
+     </div>
+ </div>
     <footer class="text-center">
         <img src="./recurso.png" alt="Logo del Hotel" class="footer-logo">
         <p>¡Disfruta de tu estancia en nuestro hotel tropical!</p>
