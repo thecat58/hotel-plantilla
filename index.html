@@ -64,6 +64,44 @@
             font-size: 24px;
             text-decoration: none;
         }
+
+
+    .invoice-container {
+      margin: 50px auto;
+      max-width: 800px;
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .invoice-header,
+    .invoice-footer {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .invoice-body {
+      padding: 20px;
+    }
+
+    .invoice-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .invoice-table th,
+    .invoice-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .total-row {
+      font-weight: bold;
+    }
     </style>
 </head>
 
@@ -188,31 +226,66 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Factura No: 001 <br>
-                    Fecha: 22 de noviembre de 2023 <br>
+                    <div class="container">
+                        <div class="invoice-container">
+                          <div class="invoice-header">
+                            <h1 class="text-center">Factura</h1>
+                          </div>
+                    
+                          <div class="invoice-body">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <p><strong>De:</strong> Hotel charambum</p>
+                                <p>Cr 40 #4-n15</p>
+                                <p>Teléfono: +57 3125618743</p>
+                              </div>
+                              <div class="col-md-6 text-right">
+                                <p><strong>Para:</strong> Jugador con tus sentimeintos </p>
+                                <p>Cr 40 #4-n15</p>
+                                <p>Fecha: 22 de noviembre de 2023</p>
+                              </div>
+                            </div>
+                    
+                            <table class="table invoice-table mt-4">
+                              <thead>
+                                <tr>
+                                  <th>Descripción</th>
+                                  <th>Cantidad</th>
+                                  <th>Precio Unitario</th>
+                                  <th>Total</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Habitacio de Precidente Chavito</td>
+                                  <td>1</td>
+                                  <td>$500.000</td>
+                                  <td>$500.000</td>
+                                </tr>
 
-                    Vendedor:<br>
-                    Nombre de la Empresa<br>
-                    Dirección de la Empresa<br>
-                    Teléfono: (123) 456-7890v<br>
-                    Correo Electrónico: info@empresa.com<br>
-
-                    Cliente:<br>
-                    Nombre del Cliente<br>
-                    Dirección del Cliente<br>
-                    Teléfono: (987) 654-3210<br>
-                    Correo Electrónico: cliente@email.com<br>
-
-                    Descripción de los Productos/Servicios:
-
-
-                    Subtotal: $180.00<br>
-                    Impuesto (IVA 10%): $18.00<br>
-                    Total: $198.00<br>
-
-                    Condiciones de Pago: 30 días netos.<br>
-
-                    Gracias por su compra. Para cualquier consulta, comuníquese con nuestro servicio al cliente.<br>
+                              <tfoot>
+                                <tr class="total-row">
+                                  <td colspan="3" class="text-right">Subtotal:</td>
+                                  <td>$580.00</td>
+                                </tr>
+                                <tr class="total-row">
+                                  <td colspan="3" class="text-right">Impuesto (IVA 10%):</td>
+                                  <td>$18.00</td>
+                                </tr>
+                                <tr class="total-row">
+                                  <td colspan="3" class="text-right">Total:</td>
+                                  <td>$198.00</td>
+                                </tr>
+                              </tfoot>
+                            </table>
+                          </div>
+                    
+                          <div class="invoice-footer">
+                            <p>Condiciones de Pago: 30 días netos</p>
+                            <p>Gracias por su compra. Para cualquier consulta, comuníquese con nuestro servicio al cliente.</p>
+                          </div>
+                        </div>
+                      </div>
 
                 </div>
                 <div class="modal-footer">
