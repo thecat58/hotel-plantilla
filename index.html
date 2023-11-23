@@ -128,9 +128,11 @@
             </ul>
         </div>
         <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="buscar" aria-label="Search">
+            <input class="form-control me-2 mr-2" type="search" placeholder="Buscar" aria-label="Search">
             <button class="btn btn-outline-primary" type="submit">Buscar</button>
         </form>
+        
+        
     </nav>
 
     <div id="carouselVideoExample" class="bg-image hover-overlay ripple shadow-1-strong rounded"
@@ -152,46 +154,82 @@
     </div>
 
 
-    <!-- Contenido de la página -->
-    <div class="container mt-3">
-        <h2>Reservar Habitación</h2>
-        <form>
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" required>
+    <style>
+        /* Estilo para las imágenes con efectos */
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            margin-right: 80px; 
+            margin-top: 30px;
+        }
+    
+        .image-container img {
+            width: 160%; /* Ajusta el valor según sea necesario para el ancho */
+            height: auto; /* Ajusta el valor según sea necesario para la altura */
+            transition: transform 0.5s ease;
+        }
+    
+        .image-container:hover img {
+            transform: scale(1.2);
+        }
+    </style>
+    
+    
+    </head>
+    <body>
+    
+      <div class="container mt-3">
+        <div class="row">
+          <!-- Columna a la izquierda con imágenes y efectos -->
+          <div class="col-md-6">
+            <div class="image-container mb-3">
+              <img src="/img/hotel1.jpg" alt="Imagen 1">
             </div>
-            <div class="form-group">
-                <label for="fecha">Fecha de Reserva:</label>
-                <input type="date" class="form-control" id="fecha" required>
-            </div>
-            <div class="form-group">
-                <label for="tipoCliente">Tipo de Cliente:</label>
-                <select class="form-control" id="tipoCliente" required>
-                    <option value="individual">Individual</option>
-                    <option value="empresa">Empresa</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="fumar">Desea Habitacion para fumar</label>
-                <select class="form-control" id="fumar" required>
-                    <option value="individual">Seleciona La una opcòn</option>
-                    <option value="individual">SI</option>
-                    <option value="empresa">No</option>
-                </select>
-            </div>
-            <!-- Mostrar el campo de tarjeta de crédito solo para clientes individuales -->
-            <div class="form-group" id="campoTarjeta" style="display: none;">
-                <label for="tarjeta">Número de Tarjeta de Crédito:</label>
-                <input type="text" class="form-control" id="tarjeta">
-            </div>
-            <!-- Nuevo campo para indicar la solicitud en el mostrador -->
-            <div class="form-check">
+          </div>
+    
+          <!-- Columna a la derecha con el formulario de reserva -->
+          <div class="col-md-6"><br><br>
+            <h2>Reservar Habitación</h2>
+            <form>
+              <div class="form-group">
+                  <label for="nombre">Nombre:</label>
+                  <input type="text" class="form-control" id="nombre" required>
+              </div>
+              <div class="form-group">
+                  <label for="fecha">Fecha de Reserva:</label>
+                  <input type="date" class="form-control" id="fecha" required>
+              </div>
+              <div class="form-group">
+                  <label for="tipoCliente">Tipo de Cliente:</label>
+                  <select class="form-control" id="tipoCliente" required>
+                      <option value="individual">Individual</option>
+                      <option value="empresa">Empresa</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="fumar">Desea Habitacion para fumar</label>
+                  <select class="form-control" id="fumar" required>
+                      <option value="individual">Seleciona una opción</option>
+                      <option value="individual">SI</option>
+                      <option value="empresa">No</option>
+                  </select>
+              </div>
+              <!-- Mostrar el campo de tarjeta de crédito solo para clientes individuales -->
+              <div class="form-group" id="campoTarjeta" style="display: none;">
+                  <label for="tarjeta">Número de Tarjeta de Crédito:</label>
+                  <input type="text" class="form-control" id="tarjeta">
+              </div>
+              <!-- Nuevo campo para indicar la solicitud en el mostrador -->
+              <div class="form-check d-flex align-items-center">
                 <input type="checkbox" class="form-check-input" id="solicitudMostrador">
-                <label class="form-check-label" for="solicitudMostrador">Solicitud en el mostrador</label>
+                <label class="form-check-label mr-3" for="solicitudMostrador">Quiere solicitar en el mostrador?</label>
+                <button type="submit" class="btn btn-primary">Reservar</button>
             </div>
-            <button type="submit" class="btn btn-primary">Reservar</button>
-        </form>
-    </div>
+            
+            </form>
+          </div>
+        </div>
+      </div>
 
     <div class="container mt-3">
         <h2>Detalles de la Reserva</h2>
